@@ -1,0 +1,208 @@
+﻿@model ResCodeCalculator.Models.Resistor
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Home Page - Resistor Color Code Calculator</title>
+    <style>
+        .row {
+            text-align: left
+        }
+        .button {
+            font: bold 13px Arial;
+            color: white;
+            background-color: #4479BA;
+            padding: 3px 6px 3px 6px;
+        }
+        .title {
+            background-color: #bc4676;
+            color: white;
+        }
+        .learn {
+            display: inline;
+            font-weight: bold;
+        }
+        a:link {
+            text-decoration: none;
+            color:  #468847;
+        }
+        a:visited {
+            text-decoration: none;
+            color:  #468847;
+        }
+        a:hover {
+            text-decoration: none;
+        }
+        a:active {
+            text-decoration: none;
+        }
+        .textbox {
+            padding-left: 5px;
+        }
+        table {
+            margin-top: 20px;
+            border-collapse: separate;
+            border-spacing: 10px;
+            padding: 5px;
+        }
+        table th {
+            padding: 5px;
+            border-radius: 10px;
+        }
+        th, td {
+            vertical-align: top
+        }
+        .res_label {
+            font-family: Arial; 
+            padding: 5px; 
+            font-size: 12px;
+            color: white; 
+            background-color: #468847; 
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        .black_color {
+            background-color: black;
+            color: white;
+            width: 80px;
+            display: block;
+        }
+        .brown_color {
+            background-color: brown;
+            color: white;
+            width: 80px;
+            display: block;
+        }
+        .red_color {
+            background-color: red;
+            color: white;
+            width: 80px;
+            display: block;
+        }
+        .orange_color {
+            background-color: orange;
+            color: white;
+            width: 80px;
+            display: block;
+        }
+        .yellow_color {
+            background-color: yellow;
+            color: black;
+            width: 80px;
+            display: block;
+        }
+        .green_color {
+            background-color: green;
+            color: white;
+            width: 80px;
+            display: block;
+        }
+        .blue_color {
+            background-color: blue;
+            color: white;
+            width: 80px;
+            display: block;
+        }
+        .violet_color {
+            background-color: violet;
+            color: white;
+            width: 80px;
+            display: block;
+        }
+        .grey_color {
+            background-color: grey;
+            color: white;
+            width: 80px;
+            display: block;
+        }
+        .white_color {
+            background-color: white;
+            color: black;
+            width: 80px;
+            display: block;
+        }
+        .silver_color {
+            background-color: silver;
+            color: white;
+            width: 80px;
+            display: block;
+        }
+        .gold_color {
+            background-color: gold;
+            color: white;
+            width: 80px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p class="learn"><a href="http://en.wikipedia.org/wiki/Electronic_color_code">Learn more about Electronic Color Code &raquo;</a></p><br />
+        <div style="margin-top: 25px"><img src="~/Images/resistor.png" /><br /></div>
+        <form action="@Url.Action("Index", "Home")" method="post">
+            <table class="table">
+                <tr class="title">
+                    <th>@Html.DisplayNameFor(model => model.BandA)</th>
+                    <th>@Html.DisplayNameFor(model => model.BandB)</th>
+                    <th>@Html.DisplayNameFor(model => model.BandC)</th>
+                    <th>@Html.DisplayNameFor(model => model.BandD)</th>
+                </tr>
+                <tr>
+                    <td class="row">
+                        <span class="black_color"> @Html.RadioButton("BandA", "Black", true) Black<br /></span>
+                        <span class="brown_color"> @Html.RadioButton("BandA", "Brown")Brown<br /></span>
+                        <span class="red_color"> @Html.RadioButton("BandA", "Red")Red<br /></span>
+                        <span class="orange_color"> @Html.RadioButton("BandA", "Orange")Orange <br /></span>
+                        <span class="yellow_color"> @Html.RadioButton("BandA", "Yellow")Yellow<br /></span>
+                        <span class="green_color"> @Html.RadioButton("BandA", "Green")Green<br /></span>
+                        <span class="blue_color"> @Html.RadioButton("BandA", "Blue")Blue<br /></span>
+                        <span class="violet_color"> @Html.RadioButton("BandA", "Violet")Violet<br /></span>
+                        <span class="grey_color"> @Html.RadioButton("BandA", "Grey")Grey<br /></span>
+                        <span class="white_color"> @Html.RadioButton("BandA", "White")White<br /></span>
+                    </td>
+
+                    <td class="row">
+                        <span class="black_color"> @Html.RadioButton("BandB", "Black", true) Black<br /></span>
+                        <span class="brown_color"> @Html.RadioButton("BandB", "Brown")Brown<br /></span>
+                        <span class="red_color"> @Html.RadioButton("BandB", "Red")Red<br /></span>
+                        <span class="orange_color"> @Html.RadioButton("BandB", "Orange")Orange <br /></span>
+                        <span class="yellow_color"> @Html.RadioButton("BandB", "Yellow")Yellow<br /></span>
+                        <span class="green_color"> @Html.RadioButton("BandB", "Green")Green<br /></span>
+                        <span class="blue_color"> @Html.RadioButton("BandB", "Blue")Blue<br /></span>
+                        <span class="violet_color"> @Html.RadioButton("BandB", "Violet")Violet<br /></span>
+                        <span class="grey_color"> @Html.RadioButton("BandB", "Grey")Grey<br /></span>
+                        <span class="white_color"> @Html.RadioButton("BandB", "White")White<br /></span>
+                    </td>
+
+                    <td class="row">
+                        <span class="black_color"> @Html.RadioButton("BandC", "Black", true)Black <br /></span>
+                        <span class="brown_color"> @Html.RadioButton("BandC", "Brown")Brown <br /></span>
+                        <span class="red_color"> @Html.RadioButton("BandC", "Red")Red <br /></span>
+                        <span class="orange_color"> @Html.RadioButton("BandC", "Orange")Orange <br /></span>
+                        <span class="yellow_color"> @Html.RadioButton("BandC", "Yellow")Yellow <br /></span>
+                        <span class="green_color"> @Html.RadioButton("BandC", "Green")Green <br /></span>
+                        <span class="blue_color"> @Html.RadioButton("BandC", "Blue")Blue <br /></span>
+                        <span class="gold_color"> @Html.RadioButton("BandC", "Gold")Gold <br /></span>
+                        <span class="silver_color"> @Html.RadioButton("BandC", "Silver", false)Silver <br /></span>
+                    </td>
+                    
+                    <td class="row">
+                        <span class="brown_color"> @Html.RadioButton("BandD", "Brown", true)Brown <br /></span>
+                        <span class="red_color"> @Html.RadioButton("BandD", "Red")Red <br /></span>
+                        <span class="gold_color"> @Html.RadioButton("BandD", "Gold")Gold <br /></span>
+                        <span class="silver_color"> @Html.RadioButton("BandD", "Silver", false)Silver <br /></span>
+                    </td>
+                </tr>
+            </table>
+            <p><input class="button" type="submit" value="Calculate" /></p>
+    </form>
+    <label class="res_label">4-Band resistor value: </label>
+    <input class="textbox" type="text" name="ResTotal" value="@ViewBag.Message"  />
+    </div>
+</body>
+</html>
