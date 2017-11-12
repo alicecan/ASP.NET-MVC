@@ -38,7 +38,7 @@ namespace ResCodeCalculator.Controllers
             }
             else if (total >= 1e3)
             {
-                betterVal = total / 1e3 + "K";
+                betterVal = total / 1e3 + "k";
             }
             else
             {

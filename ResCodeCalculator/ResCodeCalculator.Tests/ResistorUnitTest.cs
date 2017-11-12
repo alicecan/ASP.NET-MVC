@@ -39,6 +39,18 @@ namespace ResCodeCalculator.Tests
             expected = 0.56;
             actual = r.CalculateOhmValue("Green", "Blue", "Silver", "Gold");
             Assert.AreEqual(expected, actual, 0.001, "Resistance value not matched!");
+
+            expected = 88e3;
+            actual = r.CalculateOhmValue("Gray", "Gray", "Orange", "Gold");
+            Assert.AreEqual(expected, actual, 0.001, "Resistance value not matched!");
+
+            expected = 8e3;
+            actual = r.CalculateOhmValue("Black", "Gray", "Orange", "Gold");
+            Assert.AreEqual(expected, actual, 0.001, "Resistance value not matched!");
+
+            expected = 1.8e6;
+            actual = r.CalculateOhmValue("Brown", "Gray", "Green", "Gold");
+            Assert.AreEqual(expected, actual, 0.001, "Resistance value not matched!");
         }
 
         [TestMethod]

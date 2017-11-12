@@ -115,7 +115,7 @@ namespace ResCodeCalculator.Models
             Green,
             Blue,
             Violet,
-            Grey,
+            Gray,
             White
         }
 
