@@ -9,9 +9,9 @@ namespace ResCodeCalculator.Models
 {
     public class Resistor : IOhmValueCalculator
     {
-        [Display(Name = "First Digit")]
+        [Display(Name = "1st Digit")]
         public DigitColor BandA { get; set; }
-        [Display(Name = "Second Digit")]
+        [Display(Name = "2nd Digit")]
         public DigitColor BandB { get; set; }
         [Display(Name = "Multiplier")]
         public MultiplierColor BandC { get; set; }
